@@ -10,23 +10,22 @@ int main(){
 	int k; cin>>k;
 	string s; cin>>s;
 	int a = int('a');
-	set<char>ms;
 
 	for(int i=0;i<s.size();i++){
 		arr[int(s[i])-a]++;
-		ms.insert(s[i]);
-	}
-	for(int i=0;i<26;i++){
-		if(arr[i] != 0 && arr[i] != k){
-			cout<< -1<<endl;
-			return 0;
-		}
 	}
 
 	stringstream ss;
-	for(set<char>::iterator it = ms.begin(); it!=ms.end();++it){
-		ss<<*it;
+	for(int i=0;i<26;i++){
+		if(arr[i] != 0 && arr[i]%k!=0){
+			cout<< -1<<endl;
+			return 0;
+		}
+
+		char ms = char(i+a);
+		ss<<string(arr[i]/k, ms);
 	}
+
 
 	string p = ss.str();
 
