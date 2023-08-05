@@ -1,0 +1,24 @@
+{
+    "name": "C++ Launch",
+	"configurations": [
+		{
+			"name": "launch",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/sample/a.out",
+			"args": ["5", "2", "6969420", "1023712", "4817239", "5658128", "3247851"],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "lldb"
+		},
+		{
+			"name": "(lldb) Attach",
+			"type": "cppdbg",
+			"request": "attach",
+			"program": "enter program name, for example ${workspaceFolder}/a.out",
+			"MIMode": "lldb"
+		}
+	]
+}
