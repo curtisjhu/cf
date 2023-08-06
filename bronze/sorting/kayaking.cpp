@@ -6,22 +6,24 @@ int main() {
 
 	vector<int> v(2*n);
 
+	set<int> persons;
+
 	for (int i = 0; i < 2*n; i++) {
+		persons.insert(i);
 		cin>>v[i];
 	}
 
-	sort(v.begin(), v.end());
-
-	vector<int> diff;
-	for(int i=0; i< 2*n-1;i++) {
-		diff.push_back(v[i+1]-v[i]);
+	vector< vector<int> > diff(n, vector<int>(n));
+	for(int i=0; i< 2*n;i++) {
+		for(int j=i+1; j< 2*n;j++) {
+			diff[i][j] = abs(v[i] - v[j]);
+		}
 	}
 
 	sort(diff.begin(), diff.end());
-	diff.pop_back();
-	diff.pop_back();
 
-	int s = 0;
+	int res = INT_MAX;
+
 	for(int i=0;i<diff.size();i++) {
 		s += diff[i];
 	}
