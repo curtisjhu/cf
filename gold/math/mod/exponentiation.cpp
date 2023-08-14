@@ -40,7 +40,10 @@ int main() {
     cin.tie(0); cout.tie(0);
     int t; cin>>t;
     
+    // https://cses.fi/problemset/task/1095
     while(t--) {
+		int a, b;
+		cin>>a>>b;
 
     }
 }

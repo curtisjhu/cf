@@ -35,12 +35,17 @@ mt19937 RNG(chrono::steady_clock::now().time_since_epoch().count());
 #define SHUF(v) shuffle(all(v), RNG); 
 // Use mt19937_64 for 64 bit random numbers.
 
+
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int t; cin>>t;
-    
-    while(t--) {
-
+	int n;
+	cin>>n;
+	set<int> s;
+    for (int t = 1, x; t <= n; t++) {
+		cin>>x;
+		s.insert(x);
     }
+
+	cout<<s.size()<<endl;
 }

@@ -22,8 +22,6 @@ template<typename Head, typename... Tail> void dbg_out(Head H, Tail... T) { cerr
 #define all(a) (a).begin(), (a).end()
 
 #define PI 3.1415926535897932384626433832795l 
-#define s second
-#define f first
 const int MAX_N = 1e5 + 5;
 const ll MOD = 1e9 + 7;
 const ll INF = 1e9;
@@ -35,12 +33,30 @@ mt19937 RNG(chrono::steady_clock::now().time_since_epoch().count());
 #define SHUF(v) shuffle(all(v), RNG); 
 // Use mt19937_64 for 64 bit random numbers.
 
+void solve() {
+	int x[6], y[6];
+	for (int i=1;i<=6;i++)
+		cin>>x[i]>>y[i];
+	
+	// not strictly inside
+	bool flag = false;
+	for (int i=3;i<=6 && !flag;i++) {
+		if (x[i] <= max(x[1], x[2]) && x[i] >= min(x[1], x[2]) &&
+	}
+
+	// one white corner strictly outside both blacks
+
+	
+
+}
+
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int t; cin>>t;
-    
-    while(t--) {
-
+    int tc = 1;
+    // cin >> tc;
+    for (int t = 1; t <= tc; t++) {
+        // cout << "Case #" << t << ": ";
+        solve();
     }
 }
